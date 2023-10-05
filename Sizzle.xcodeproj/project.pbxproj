@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ACA07EC22ACDB852000429CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC12ACDB852000429CB /* API.swift */; };
+		ACA07EC52ACDB8B0000429CB /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */; };
+		ACA07EC82ACDB8DD000429CB /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */; };
+		ACA07ECC2ACDBAFB000429CB /* RecipeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07ECB2ACDBAFB000429CB /* RecipeAPI.swift */; };
 		AE21F6672ABC50E000A1B2DE /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21F6662ABC50E000A1B2DE /* SplashScreenView.swift */; };
 		AE21F66A2ABC53AC00A1B2DE /* Exo 2 Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE21F6692ABC53AC00A1B2DE /* Exo 2 Regular.ttf */; };
 		AE21F6702ABC587C00A1B2DE /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE21F66F2ABC587C00A1B2DE /* Font.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ACA07EC12ACDB852000429CB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		ACA07ECB2ACDBAFB000429CB /* RecipeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAPI.swift; sourceTree = "<group>"; };
 		AE21F6662ABC50E000A1B2DE /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		AE21F6692ABC53AC00A1B2DE /* Exo 2 Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo 2 Regular.ttf"; sourceTree = "<group>"; };
 		AE21F66B2ABC544200A1B2DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +51,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACA07EC02ACDB846000429CB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ACA07EC12ACDB852000429CB /* API.swift */,
+				ACA07ECB2ACDBAFB000429CB /* RecipeAPI.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ACA07EC32ACDB896000429CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ACA07EC62ACDB8D2000429CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AE21F6682ABC531E00A1B2DE /* CustomFonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +103,8 @@
 		AE21F6722ABC5CEE00A1B2DE /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				ACA07EC62ACDB8D2000429CB /* Model */,
+				ACA07EC32ACDB896000429CB /* ViewModel */,
 				AE21F6752ABC5D2500A1B2DE /* RecipesMainView.swift */,
 			);
 			path = Recipes;
@@ -94,6 +129,7 @@
 		AECD352F2ABC4D4500EC5225 /* Sizzle */ = {
 			isa = PBXGroup;
 			children = (
+				ACA07EC02ACDB846000429CB /* Services */,
 				AE21F66B2ABC544200A1B2DE /* Info.plist */,
 				AE21F6682ABC531E00A1B2DE /* CustomFonts */,
 				AE21F66E2ABC585F00A1B2DE /* Extensions */,
@@ -189,10 +225,14 @@
 			files = (
 				AE21F6702ABC587C00A1B2DE /* Font.swift in Sources */,
 				AECD35332ABC4D4500EC5225 /* MainView.swift in Sources */,
+				ACA07ECC2ACDBAFB000429CB /* RecipeAPI.swift in Sources */,
 				AE21F6742ABC5D1900A1B2DE /* NewsMainView.swift in Sources */,
 				AE21F6762ABC5D2600A1B2DE /* RecipesMainView.swift in Sources */,
+				ACA07EC52ACDB8B0000429CB /* CategoryViewModel.swift in Sources */,
 				AECD35312ABC4D4500EC5225 /* SizzleApp.swift in Sources */,
 				AE21F6672ABC50E000A1B2DE /* SplashScreenView.swift in Sources */,
+				ACA07EC82ACDB8DD000429CB /* CategoryModel.swift in Sources */,
+				ACA07EC22ACDB852000429CB /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
