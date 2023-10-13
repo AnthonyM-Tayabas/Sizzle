@@ -10,6 +10,7 @@ import SwiftUI
 struct RecipesMainView: View {
     
     @ObservedObject private var viewModel = CategoryViewModel()
+    @ObservedObject private var viewMealModel = MealViewModel()
     @State private var search: String = ""
 
     var body: some View {
@@ -93,6 +94,36 @@ struct RecipesMainView: View {
                         .background(.white)
                         .cornerRadius(12)
                     }
+                    
+                    ForEach(viewMealModel.meals?.meals ?? []) { meal in
+                        ZStack {
+                            VStack(alignment: .leading, spacing: 8) {
+                                AsyncImage(url: URL(string: "\(meal.thumbnail)")) { image in
+                                    image
+                                        .resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(height: 180)
+                                HStack {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        Text("Breakfast")
+                                            .font(.caption)
+                                            .foregroundColor(Color(#colorLiteral(red: 0.07058823529, green: 0.5607843137, blue: 0.6823529412, alpha: 1)))
+                                        Text("\(meal.name)")
+                                            .fontWeight(.medium)
+                                            .lineLimit(nil)
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                }
+                                .padding()
+                            }
+                            .frame(maxWidth: .infinity)
+                            .background(.white)
+                            .cornerRadius(12)
+                        }
+                        .background(.gray.opacity(0.1))
+                    }
                 }
             }
             .padding([.trailing, .leading], 20)
@@ -100,6 +131,11 @@ struct RecipesMainView: View {
             .onAppear {
                 Task {
                     await viewModel.fetchCategories()
+                }
+            }
+            .onSubmit {
+                Task {
+                    await viewMealModel.fetchMeals(searchName: search)
                 }
             }
         }

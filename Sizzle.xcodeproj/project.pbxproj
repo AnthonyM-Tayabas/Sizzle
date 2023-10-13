@@ -20,6 +20,8 @@
 		AECD35332ABC4D4500EC5225 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECD35322ABC4D4500EC5225 /* MainView.swift */; };
 		AECD35352ABC4D4700EC5225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECD35342ABC4D4700EC5225 /* Assets.xcassets */; };
 		AECD35382ABC4D4700EC5225 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECD35372ABC4D4700EC5225 /* Preview Assets.xcassets */; };
+		DE412AB62AD91A3C00CBD952 /* MealModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE412AB52AD91A3C00CBD952 /* MealModel.swift */; };
+		DE412AB82AD91A9000CBD952 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE412AB72AD91A9000CBD952 /* MealViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		AECD35322ABC4D4500EC5225 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AECD35342ABC4D4700EC5225 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AECD35372ABC4D4700EC5225 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DE412AB52AD91A3C00CBD952 /* MealModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealModel.swift; sourceTree = "<group>"; };
+		DE412AB72AD91A9000CBD952 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */,
+				DE412AB72AD91A9000CBD952 /* MealViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */,
+				DE412AB52AD91A3C00CBD952 /* MealModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,7 +232,9 @@
 				AE21F6702ABC587C00A1B2DE /* Font.swift in Sources */,
 				AECD35332ABC4D4500EC5225 /* MainView.swift in Sources */,
 				ACA07ECC2ACDBAFB000429CB /* RecipeAPI.swift in Sources */,
+				DE412AB62AD91A3C00CBD952 /* MealModel.swift in Sources */,
 				AE21F6742ABC5D1900A1B2DE /* NewsMainView.swift in Sources */,
+				DE412AB82AD91A9000CBD952 /* MealViewModel.swift in Sources */,
 				AE21F6762ABC5D2600A1B2DE /* RecipesMainView.swift in Sources */,
 				ACA07EC52ACDB8B0000429CB /* CategoryViewModel.swift in Sources */,
 				AECD35312ABC4D4500EC5225 /* SizzleApp.swift in Sources */,
@@ -361,6 +369,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sizzle/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sizzle/Info.plist;
@@ -390,6 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Sizzle/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Sizzle/Info.plist;
