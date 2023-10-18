@@ -33,4 +33,15 @@ class RecipeAPI: NSObject {
         
         return (data, response)
     }
+    
+    func getMeals(search: String) async throws -> (Data, URLResponse) {
+        guard let url = URL(string: "\(baseURL)/search.php?s=\(search)") else { throw NSError(domain: "something", code: 100) }
+        var urlRequest = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData)
+        urlRequest.httpMethod = "GET"
+        urlRequest.httpBody = nil
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let (data, response) = try await sendRequest(urlRequest: urlRequest)
+        return (data, response)
+    }
 }
