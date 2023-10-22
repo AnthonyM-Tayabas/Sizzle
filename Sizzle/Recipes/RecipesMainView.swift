@@ -12,6 +12,7 @@ struct RecipesMainView: View {
     @ObservedObject private var viewModel = CategoryViewModel()
     @ObservedObject private var viewMealModel = MealViewModel()
     @State private var search: String = ""
+    @State private var searchSubmitted = false
 
     var body: some View {
         NavigationStack {
@@ -25,6 +26,7 @@ struct RecipesMainView: View {
                     Text("What would you like to cook today?")
                         .font(.title)
                         .fontWeight(.bold)
+                        .foregroundColor(.black)
                     
                     HStack(spacing: 16) {
                         HStack {
@@ -34,6 +36,13 @@ struct RecipesMainView: View {
                                 .frame(width: 18, height: 18)
                                 .foregroundColor(.gray)
                             TextField("Search", text: $search)
+                                .foregroundColor(.black)
+                                .onSubmit {
+                                    searchSubmitted = true
+                                    Task {
+                                        await viewMealModel.fetchMeals(searchName: search)
+                                    }
+                                }
                         }
                         .padding()
                         .background(.gray.opacity(0.1))
@@ -51,6 +60,7 @@ struct RecipesMainView: View {
                     Text("Categories")
                         .font(.title3)
                         .bold()
+                        .foregroundColor(.black)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
@@ -60,6 +70,7 @@ struct RecipesMainView: View {
                                         .font(.caption)
                                         .padding()
                                         .cornerRadius(8)
+                                        .foregroundColor(.black)
                                 }
                                 .background(.gray.opacity(0.1))
                             }
@@ -68,61 +79,27 @@ struct RecipesMainView: View {
                     
                     // TODO: Use viewmodel to fetch random recipe
                     
-                    ZStack {
-                        VStack(alignment: .leading, spacing: 8) {
-                            AsyncImage(url: URL(string: "https://www.themealdb.com/images/media/meals/qtqwwu1511792650.jpg")) { image in
-                                image
-                                    .resizable()
-                            } placeholder: {
-                                ProgressView()
+                    if searchSubmitted {
+                        Text("Found \((viewMealModel.meals?.meals ?? []).count) results")
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
+                        
+                        ForEach(viewMealModel.meals?.meals ?? []) { meal in
+                            ZStack {
+                                RecipeCard(meal: meal)
                             }
-                            .frame(height: 180)
-                            HStack {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Breakfast")
-                                        .font(.caption)
-                                        .foregroundColor(Color(#colorLiteral(red: 0.07058823529, green: 0.5607843137, blue: 0.6823529412, alpha: 1)))
-                                    Text("Chinon Apple Tarts")
-                                        .fontWeight(.medium)
-                                        .lineLimit(nil)
-                                        .multilineTextAlignment(.leading)
-                                }
-                            }
-                            .padding()
+                            .background(.gray.opacity(0.1))
                         }
-                        .frame(maxWidth: .infinity)
-                        .background(.white)
-                        .cornerRadius(12)
                     }
-                    
-                    ForEach(viewMealModel.meals?.meals ?? []) { meal in
-                        ZStack {
-                            VStack(alignment: .leading, spacing: 8) {
-                                AsyncImage(url: URL(string: "\(meal.thumbnail)")) { image in
-                                    image
-                                        .resizable()
-                                } placeholder: {
-                                    ProgressView()
-                                }
-                                .frame(height: 180)
-                                HStack {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        Text("Breakfast")
-                                            .font(.caption)
-                                            .foregroundColor(Color(#colorLiteral(red: 0.07058823529, green: 0.5607843137, blue: 0.6823529412, alpha: 1)))
-                                        Text("\(meal.name)")
-                                            .fontWeight(.medium)
-                                            .lineLimit(nil)
-                                            .multilineTextAlignment(.leading)
-                                    }
-                                }
-                                .padding()
-                            }
-                            .frame(maxWidth: .infinity)
-                            .background(.white)
-                            .cornerRadius(12)
+                    else {
+                        if viewMealModel.loadingRandomMeal {
+                            Loader()
                         }
-                        .background(.gray.opacity(0.1))
+                        else {
+                            ZStack {
+                                RecipeCard(meal: viewMealModel.randomMeal)
+                            }
+                        }
                     }
                 }
             }
@@ -130,16 +107,44 @@ struct RecipesMainView: View {
             .background(.gray.opacity(0.1))
             .onAppear {
                 Task {
-                    await viewModel.fetchCategories()
-                }
-            }
-            .onSubmit {
-                Task {
-                    await viewMealModel.fetchMeals(searchName: search)
+                    if viewModel.categories == nil {
+                        await viewModel.fetchCategories()
+                    }
+                    if viewMealModel.randomMeal == nil {
+                        await viewMealModel.fetchRandomMeal()
+                    }
                 }
             }
         }
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+
+struct RecipeImage: View {
+    let url: URL?
+        
+    init(url: URL?) {
+        self.url = url
+    }
+    
+    var body: some View {
+        if let url = url {
+            AsyncImage(url: url) { phase in
+                switch phase {
+                    case .empty:
+                        Color.gray
+                    case .success(let image):
+                        image.resizable()
+                    case .failure:
+                        Color.gray
+                    @unknown default:
+                        EmptyView()
+                }
+            }
+        } else {
+            Color.gray
+        }
     }
 }
 
