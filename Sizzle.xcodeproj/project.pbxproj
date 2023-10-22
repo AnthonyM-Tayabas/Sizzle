@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC83DE8F2AE0D734008C268B /* NewsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83DE8A2AE0D734008C268B /* NewsRowView.swift */; };
+		AC83DE902AE0D734008C268B /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83DE8B2AE0D734008C268B /* News.swift */; };
+		AC83DE912AE0D734008C268B /* NewsDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83DE8C2AE0D734008C268B /* NewsDetailedView.swift */; };
+		AC83DE922AE0D734008C268B /* NewsMainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83DE8D2AE0D734008C268B /* NewsMainListView.swift */; };
+		AC83DE932AE0D734008C268B /* NewsSeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC83DE8E2AE0D734008C268B /* NewsSeeListView.swift */; };
+		AC894E772AE216F100C8BEB8 /* RecipesSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894E762AE216F100C8BEB8 /* RecipesSearchView.swift */; };
+		AC894E792AE241D300C8BEB8 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894E782AE241D300C8BEB8 /* RecipeView.swift */; };
+		AC894E7C2AE3DAB200C8BEB8 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894E7B2AE3DAB200C8BEB8 /* Loader.swift */; };
+		AC894E7E2AE3DD7A00C8BEB8 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC894E7D2AE3DD7A00C8BEB8 /* RecipeCard.swift */; };
 		ACA07EC22ACDB852000429CB /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC12ACDB852000429CB /* API.swift */; };
 		ACA07EC52ACDB8B0000429CB /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */; };
 		ACA07EC82ACDB8DD000429CB /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */; };
@@ -25,6 +34,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC83DE8A2AE0D734008C268B /* NewsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsRowView.swift; sourceTree = "<group>"; };
+		AC83DE8B2AE0D734008C268B /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		AC83DE8C2AE0D734008C268B /* NewsDetailedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailedView.swift; sourceTree = "<group>"; };
+		AC83DE8D2AE0D734008C268B /* NewsMainListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsMainListView.swift; sourceTree = "<group>"; };
+		AC83DE8E2AE0D734008C268B /* NewsSeeListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsSeeListView.swift; sourceTree = "<group>"; };
+		AC894E762AE216F100C8BEB8 /* RecipesSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSearchView.swift; sourceTree = "<group>"; };
+		AC894E782AE241D300C8BEB8 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		AC894E7B2AE3DAB200C8BEB8 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		AC894E7D2AE3DD7A00C8BEB8 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 		ACA07EC12ACDB852000429CB /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		ACA07EC42ACDB8B0000429CB /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		ACA07EC72ACDB8DD000429CB /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
@@ -55,6 +73,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC894E7A2AE3DAA300C8BEB8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AC894E7B2AE3DAB200C8BEB8 /* Loader.swift */,
+				AC894E7D2AE3DD7A00C8BEB8 /* RecipeCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		ACA07EC02ACDB846000429CB /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +128,11 @@
 		AE21F6712ABC5CE400A1B2DE /* News */ = {
 			isa = PBXGroup;
 			children = (
+				AC83DE8B2AE0D734008C268B /* News.swift */,
+				AC83DE8C2AE0D734008C268B /* NewsDetailedView.swift */,
+				AC83DE8D2AE0D734008C268B /* NewsMainListView.swift */,
+				AC83DE8A2AE0D734008C268B /* NewsRowView.swift */,
+				AC83DE8E2AE0D734008C268B /* NewsSeeListView.swift */,
 				AE21F6732ABC5D1900A1B2DE /* NewsMainView.swift */,
 			);
 			path = News;
@@ -109,9 +141,12 @@
 		AE21F6722ABC5CEE00A1B2DE /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
+				AC894E7A2AE3DAA300C8BEB8 /* Components */,
 				ACA07EC62ACDB8D2000429CB /* Model */,
 				ACA07EC32ACDB896000429CB /* ViewModel */,
 				AE21F6752ABC5D2500A1B2DE /* RecipesMainView.swift */,
+				AC894E782AE241D300C8BEB8 /* RecipeView.swift */,
+				AC894E762AE216F100C8BEB8 /* RecipesSearchView.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";
@@ -233,14 +268,23 @@
 				AECD35332ABC4D4500EC5225 /* MainView.swift in Sources */,
 				ACA07ECC2ACDBAFB000429CB /* RecipeAPI.swift in Sources */,
 				DE412AB62AD91A3C00CBD952 /* MealModel.swift in Sources */,
+				AC83DE902AE0D734008C268B /* News.swift in Sources */,
 				AE21F6742ABC5D1900A1B2DE /* NewsMainView.swift in Sources */,
 				DE412AB82AD91A9000CBD952 /* MealViewModel.swift in Sources */,
 				AE21F6762ABC5D2600A1B2DE /* RecipesMainView.swift in Sources */,
 				ACA07EC52ACDB8B0000429CB /* CategoryViewModel.swift in Sources */,
 				AECD35312ABC4D4500EC5225 /* SizzleApp.swift in Sources */,
+				AC83DE922AE0D734008C268B /* NewsMainListView.swift in Sources */,
+				AC894E792AE241D300C8BEB8 /* RecipeView.swift in Sources */,
 				AE21F6672ABC50E000A1B2DE /* SplashScreenView.swift in Sources */,
 				ACA07EC82ACDB8DD000429CB /* CategoryModel.swift in Sources */,
+				AC894E7C2AE3DAB200C8BEB8 /* Loader.swift in Sources */,
+				AC83DE8F2AE0D734008C268B /* NewsRowView.swift in Sources */,
+				AC894E772AE216F100C8BEB8 /* RecipesSearchView.swift in Sources */,
 				ACA07EC22ACDB852000429CB /* API.swift in Sources */,
+				AC83DE932AE0D734008C268B /* NewsSeeListView.swift in Sources */,
+				AC83DE912AE0D734008C268B /* NewsDetailedView.swift in Sources */,
+				AC894E7E2AE3DD7A00C8BEB8 /* RecipeCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
