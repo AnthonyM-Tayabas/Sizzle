@@ -23,7 +23,7 @@ struct MainView: View {
                         .font(.headerRegularSizzle)
                         .foregroundColor(.accentColor)
                 }
-                .padding(.top, 128)
+                .padding(.top, 256)
                 
                 NavigationLink {
                     RecipesMainView()
@@ -33,11 +33,15 @@ struct MainView: View {
                         .foregroundColor(.accentColor)
                 }
                 .padding(.top, 12)
-                
             }
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
                    alignment: .center)
+            
+            Text("We're building more tools just for you.")
+                .font(.descriptionRegularSizzle)
+                .foregroundColor(.gray)
+                .padding(.bottom, 24)
         }
     }
 }

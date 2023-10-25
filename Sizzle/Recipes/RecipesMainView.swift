@@ -18,11 +18,6 @@ struct RecipesMainView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    Text("Hello!")
-                        .font(.caption)
-                        .fontWeight(.medium)
-                        .foregroundColor(.gray)
-                    
                     Text("What would you like to cook today?")
                         .font(.title)
                         .fontWeight(.bold)
@@ -116,7 +111,6 @@ struct RecipesMainView: View {
                 }
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
