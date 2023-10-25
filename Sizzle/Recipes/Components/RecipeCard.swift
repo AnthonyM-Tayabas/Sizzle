@@ -19,9 +19,10 @@ struct RecipeCard: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(meal?.category ?? "-")
-                            .font(.caption)
+                            .font(.footerRegularSizzle)
                             .foregroundColor(Color(#colorLiteral(red: 0.07058823529, green: 0.5607843137, blue: 0.6823529412, alpha: 1)))
                         Text(meal?.name ?? "")
+                            .font(.messageRegularSizzle)
                             .fontWeight(.medium)
                             .lineLimit(nil)
                             .multilineTextAlignment(.leading)

@@ -29,7 +29,6 @@ struct NewsMainView: View {
                     }
             }
         }
-        .navigationBarBackButtonHidden(true)
     }
 }
 
