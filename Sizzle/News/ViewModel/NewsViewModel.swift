@@ -38,7 +38,8 @@ class NewsViewModel: ObservableObject {
         if Task.isCancelled { return }
         phase = .empty
         do {
-            let articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+            var articles = try await newsAPI.fetch(from: fetchTaskToken.category)
+            articles.removeAll(where: {$0.title.contains("[Removed]")})
             if Task.isCancelled { return }
             phase = .success(articles)
         } catch {

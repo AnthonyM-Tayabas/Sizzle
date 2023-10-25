@@ -62,7 +62,8 @@ class SearchViewModel: ObservableObject {
         }
         
         do {
-            let articles = try await newsAPI.search(for: searchQuery)
+            var articles = try await newsAPI.search(for: searchQuery)
+            articles.removeAll(where: {$0.title.contains("[Removed]")})
             if Task.isCancelled { return }
             if searchQuery != trimmedSearchQuery {
                 return

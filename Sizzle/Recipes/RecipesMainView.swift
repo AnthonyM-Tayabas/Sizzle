@@ -19,7 +19,7 @@ struct RecipesMainView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     Text("What would you like to cook today?")
-                        .font(.title)
+                        .font(.headerRegularSizzle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
@@ -53,7 +53,7 @@ struct RecipesMainView: View {
                     }
                     
                     Text("Categories")
-                        .font(.title3)
+                        .font(.subHeaderRegularSizzle)
                         .bold()
                         .foregroundColor(.black)
                     
@@ -62,7 +62,7 @@ struct RecipesMainView: View {
                             ForEach(viewModel.categories?.categories ?? []) { category in
                                 ZStack {
                                     Text(category.name)
-                                        .font(.caption)
+                                        .font(.footerRegularSizzle)
                                         .padding()
                                         .cornerRadius(8)
                                         .foregroundColor(.black)
@@ -76,6 +76,7 @@ struct RecipesMainView: View {
                     
                     if searchSubmitted {
                         Text("Found \((viewMealModel.meals?.meals ?? []).count) results")
+                            .font(.bodyRegularSizzle)
                             .foregroundColor(.black)
                             .fontWeight(.bold)
                         

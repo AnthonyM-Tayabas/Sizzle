@@ -42,29 +42,31 @@ struct RecipeView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     Text(meal!.name)
-                        .font(.title)
+                        .font(.bodyRegularSizzle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
                     Divider()
                     
                     Text("Instructions")
-                        .font(.title2)
+                        .font(.headlineRegularSizzle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
                     Text(meal?.instructions ?? "-")
+                        .font(.descriptionRegularSizzle)
                         .multilineTextAlignment(.leading)
                         .foregroundColor(.black)
                     
                     Text("Ingredients")
-                        .font(.title2)
+                        .font(.headlineRegularSizzle)
                         .fontWeight(.bold)
                         .foregroundColor(.black)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         ForEach(meal?.ingredients ?? [], id: \.self) { ingredient in
                             Text(ingredient)
+                                .font(.descriptionRegularSizzle)
                                 .foregroundColor(.black)
                         }
                     }

@@ -18,6 +18,7 @@ struct MainView: View {
                 
                 NavigationLink {
                     NewsMainView()
+                        .navigationTitle("Sizzling News")
                 } label: {
                     Text("News")
                         .font(.headerRegularSizzle)
@@ -27,6 +28,7 @@ struct MainView: View {
                 
                 NavigationLink {
                     RecipesMainView()
+                        .navigationTitle("Sizzling Recipes")
                 } label: {
                     Text("Recipes")
                         .font(.headerRegularSizzle)
