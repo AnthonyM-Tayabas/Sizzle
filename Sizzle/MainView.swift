@@ -14,6 +14,7 @@ struct MainView: View {
                 Image("Sizzle-White-Bg")
                     .scaledToFit()
                     .frame(width: 120, height: 120)
+                    .padding(.top, -128)
                 
                 NavigationLink {
                     NewsMainView()
@@ -22,6 +23,7 @@ struct MainView: View {
                         .font(.headerRegularSizzle)
                         .foregroundColor(.accentColor)
                 }
+                .padding(.top, 128)
                 
                 NavigationLink {
                     RecipesMainView()
@@ -30,11 +32,12 @@ struct MainView: View {
                         .font(.headerRegularSizzle)
                         .foregroundColor(.accentColor)
                 }
+                .padding(.top, 12)
                 
             }
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
-                   alignment: .top)
+                   alignment: .center)
         }
     }
 }
