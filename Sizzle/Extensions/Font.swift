@@ -18,4 +18,10 @@ extension Font {
     
     static let messageRegularSizzle = Font(UIFont(name: "Exo 2 Regular", size: 20)!)
     
+    static let headlineRegularSizzle = Font(UIFont(name: "Exo 2 Regular", size: 18)!)
+    
+    static let descriptionRegularSizzle = Font(UIFont(name: "Exo 2 Regular", size: 14)!)
+    
+    static let footerRegularSizzle = Font(UIFont(name: "Exo 2 Regular", size: 12)!)
+    
 }

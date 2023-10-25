@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SizzleApp: App {
+    
+    @StateObject var bookmarkVM = BookmarkViewModel.shared
+    
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+                .environmentObject(bookmarkVM)
         }
     }
 }

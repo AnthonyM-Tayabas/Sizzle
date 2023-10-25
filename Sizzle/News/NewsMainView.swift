@@ -11,39 +11,25 @@ struct NewsMainView: View {
     var news = News.newsList()
     
     var body: some View {
-        NavigationView {
-            VStack (alignment: .leading) {
-                NavigationLink(destination: NewsDetailedView(news: news.first!)) {
-                    VStack {
-                        AsyncImage(url: URL(string: news.first!.imageUrl)) {
-                            image in image.image?.resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 200)
-                                .cornerRadius(10)
-                                .padding(10)
-                        }
-
-                        VStack (alignment: .leading, spacing: 10) {
-                            Text(news[0].articaleName)
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .lineLimit(3)
-                            Text(news[0].datePublished).foregroundColor(.gray)
-
-                        }
-                        .padding(10)
+        NavigationStack {
+            TabView {
+                NewsTabView()
+                    .tabItem {
+                        Label("News", systemImage: "newspaper")
                     }
-                }
-                Divider()
-                NewsMainListView()
+                
+                SearchTabView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+                
+                BookmarkTabView()
+                    .tabItem {
+                        Label("Saved", systemImage: "bookmark")
+                    }
             }
-            .frame(maxHeight: .infinity , alignment: .topTrailing)
-            .navigationTitle(Text("Today's Top News")
-            .font(.headerRegularSizzle))
-            .navigationBarTitleDisplayMode(.inline)
-            .padding(5)
         }
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
